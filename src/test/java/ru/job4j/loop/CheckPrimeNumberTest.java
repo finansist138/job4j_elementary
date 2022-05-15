@@ -18,6 +18,7 @@ public class CheckPrimeNumberTest {
         int number = 4;
         boolean result = CheckPrimeNumber.check(number);
         Assert.assertFalse(result);
+
     }
 
     @Test
