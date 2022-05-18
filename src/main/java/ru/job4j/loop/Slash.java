@@ -7,12 +7,12 @@ public class Slash {
                 boolean left = cell == row;
                 boolean right = (cell + row) == size - 1;
                  if (left) {
-                System.out.print("0");
-            } else if (right) {
-                    System.out.print("0");
-                } else {
-                    System.out.print(" ");
-                }
+                           System.out.print("0");
+                 } else if (right) {
+                           System.out.print("0");
+                 } else {
+                         System.out.print(" ");
+                 }
             }
             System.out.println();
         }
