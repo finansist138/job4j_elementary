@@ -46,7 +46,7 @@ public class MatrixCheckTest {
     public void whenNotHaveMonoVertical() {
         char[][] input = {
                 {' ', ' ', 'X'},
-                {' ', ' ', 'U'},
+                {' ', ' ', ' '},
                 {' ', ' ', 'X'},
         };
         int column = 2;
