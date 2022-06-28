@@ -1,22 +1,23 @@
 package ru.job4j.array;
 
-import java.util.Arrays;
-
 public class RightShift {
     public static void shift(int[] nums, int count) {
-           int[] rsl = new int[nums.length];
-            if (count < nums.length) {
-                System.arraycopy(nums, nums.length - count, rsl, 0, count);
-                System.arraycopy(nums, 0, rsl, count, nums.length - count);
-
-            } else {
-                System.arraycopy(nums, 0, rsl, 0, nums.length);
-            }
-        System.out.println(Arrays.toString(rsl));
-    }
-
-    // метод делает сдвиг с шагом 1
-        private static void shift(int[] nums) {
-
+        for (int i = 0; i < count; i++) {
+            shift(nums);
         }
     }
+    
+    private static void shift(int[] nums) {
+//        int temp = nums[nums.length - 1];
+//        for (int i = nums.length - 1; i > 0; i--) {
+//            nums[i] = nums[i - 1];
+//        }
+//        nums[0] = temp;
+
+        for (int i = nums.length - 1; i > 0; i--) {
+            int temp = nums[i];
+            nums[i] = nums[i - 1];
+            nums[i - 1] = temp;
+        }
+    }
+}
