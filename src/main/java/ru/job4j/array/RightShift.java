@@ -8,11 +8,6 @@ public class RightShift {
     }
     
     private static void shift(int[] nums) {
-//        int temp = nums[nums.length - 1];
-//        for (int i = nums.length - 1; i > 0; i--) {
-//            nums[i] = nums[i - 1];
-//        }
-//        nums[0] = temp;
 
         for (int i = nums.length - 1; i > 0; i--) {
             int temp = nums[i];
