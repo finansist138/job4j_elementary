@@ -59,7 +59,7 @@ class PasswordValidatorTest {
     void notContainWords() {
         IllegalArgumentException exception = assertThrows(
                 IllegalArgumentException.class,
-                () -> PasswordValidator.validate("qWerty4java."));
+                () -> PasswordValidator.validateContinue("qWerty4java."));
         assertThat(exception.getMessage()).isEqualTo(""
                 + "The password must not contain words: 'qwerty', '12345', 'password', 'admin', 'user'");
     }

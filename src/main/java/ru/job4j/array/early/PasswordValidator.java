@@ -18,23 +18,29 @@ public class PasswordValidator {
         }
         char[] chars = password.toCharArray();
         int sum = 0;
-        for (int i = 0; i < chars.length; i++) {
-            if (!isDigit(chars[i])) {
+        for (char pas : chars) {
+            if (isDigit(pas)) {
                 sum++;
-                if (sum != i + 1) {
-                    throw new IllegalArgumentException("The password must contain a number");
-                }
+                break;
             }
+        }
+        if (sum == 0) {
+            throw new IllegalArgumentException("The password must contain a number");
         }
         sum = 0;
-        for (int i = 0; i < chars.length; i++) {
-            if (isLetterOrDigit(chars[i])) {
+        for (char pas : chars) {
+            if (!isLetterOrDigit(pas)) {
                 sum++;
-                if (sum != i + 1) {
-                    throw new IllegalArgumentException("The password must contain a symbol");
-                }
+                break;
             }
         }
+        if (sum == 0) {
+            throw new IllegalArgumentException("The password must contain a symbol");
+        }
+        return password;
+    }
+
+    public static String validateContinue(String password) {
         String[] words = new String[]{"qwerty", "12345", "password", "admin", "user"};
         for (String word : words) {
             if (password.toLowerCase().contains(word)) {
